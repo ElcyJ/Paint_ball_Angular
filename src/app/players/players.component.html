@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><a href="#">Paint Ball</a></h1>
+				<!-- <p>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></p> -->
+			</div>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<!-- <li class="current_page_item"><a href="#">Homepage</a></li> -->
+			<li><a href="../maps">Mapas</a></li>
+			<li><a href="../teams">Times</a></li>
+            <li><a href="../players">Jogadores</a></li>
+            <li><a href="../guns">Armas</a></li>
+            <li><a href="../shots">Tiros</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+					<div class="post">
+						<h2 class="title"><a href="#">Jogadores ativos</a></h2>
+                        <hr>
+                        <table class="zui-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Localization X</th>
+                                    <th>Localization Y</th>
+                                    <th>Time</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let player of players">
+                                    <td>{{player.name}}</td>
+                                    <td>{{player.localization_x}}</td>
+                                    <td>{{player.localization_y}}</td>
+                                    <td>{{player.team.color}}</td>
+                                    <td>
+                                        <button class="myButton" (click)="updatePlayer(player.id)">Atualizar</button>
+                                        <button class="myButton" (click)="deletePlayer(player.id)">Excluir</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+
+                    </div>
+                            
+                <div style="clear: both;">&nbsp;</div>
+            </div>
+        
+        
+				<!-- end #content -->
+				<div id="sidebar">
+					<ul>
+						<li>
+							<h2>Criar jogador</h2>
+                            
+                            <form>
+                                <p>Nome: <input type="text" name="name" [(ngModel)]="player.name"></p>
+                                <p>Localização(x): <input type="text" name="localization_x" [(ngModel)]="player.localization_x"></p>
+                                <p>Localização(y): <input type="text" name="localization_y" [(ngModel)]="player.localization_y"></p>
+                                <p>Time: <input type="text" name="team" [(ngModel)]="player.team"></p>
+                                <p>Arma: <input type="text" name="gun" [(ngModel)]="player.gun"></p>
+                                <button class="myButton" (click)="registerPlayer()">Criar</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+      
+							
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page --> 
+</div>
+<div id="footer">
+</div>
+<!-- end #footer -->
+</body>
+</html>
+
+

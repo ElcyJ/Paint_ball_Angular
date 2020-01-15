@@ -1,0 +1,27 @@
+<!-- <div style="text-align:center">
+    <h1>
+      Login
+    </h1>
+  </div> -->
+
+  <!-- <input #username type='text' placeholder='username'>
+  <input #password type='password' placeholder='password'>
+  <button (click)="login(username.value, password.value)">login</button>
+  <p>{{ error?.message }}</p>
+  <p *ngIf="error">{{ error?.error | json }}</p> -->
+
+
+  <div class="login-page">
+    <div class="form">
+      <form class="login-form">
+        <h1>
+          Login
+        </h1>
+        <input #username type="text" placeholder="username"/>
+        <input #password type="password" placeholder="password"/>
+        <button (click)="login(username.value, password.value)">Entrar</button>
+        <p>{{ error?.message }}</p>
+        <p *ngIf="error">{{ error?.error | json }}</p>
+      </form>
+    </div>
+  </div>

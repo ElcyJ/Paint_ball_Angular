@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><a href="#">Paint Ball</a></h1>
+				<!-- <p>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></p> -->
+			</div>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<!-- <li class="current_page_item"><a href="#">Homepage</a></li> -->
+			<li><a href="../maps">Mapas</a></li>
+			<li><a href="../teams">Times</a></li>
+            <li><a href="../players">Jogadores</a></li>
+            <li><a href="../guns">Armas</a></li>
+            <li><a href="../shots">Tiros</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+					<div class="post">
+						<h2 class="title"><a href="#">Tiros disparados</a></h2>
+                        <hr>
+                        <table class="zui-table">
+                            <thead>
+                                <tr>
+                                    <th>Jogador</th>
+                                    <th>Direção</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let shot of shots">
+                                    <td>{{shot.direction}}</td>
+                                    <td>{{shot.player.name}}</td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+
+                    </div>
+                            
+                <div style="clear: both;">&nbsp;</div>
+            </div>
+        
+        
+				<!-- end #content -->
+				<div id="sidebar">
+					<ul>
+						<li>
+							<h2>Dar um tiro!</h2>
+                            
+                            <form>
+                                <p>Jogador: <input type="text" name="player" [(ngModel)]="shot.player"></p>
+                                <p>Direção: <input type="text" name="direction" [(ngModel)]="shot.direction"></p>
+                                <button class="myButton" (click)="registerShot()">Criar</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+      
+							
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page --> 
+</div>
+<div id="footer">
+</div>
+<!-- end #footer -->
+</body>
+</html>
+
+
+

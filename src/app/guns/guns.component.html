@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><a href="#">Paint Ball</a></h1>
+				<!-- <p>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></p> -->
+			</div>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<!-- <li class="current_page_item"><a href="#">Homepage</a></li> -->
+			<li><a href="../maps">Mapas</a></li>
+			<li><a href="../teams">Times</a></li>
+            <li><a href="../players">Jogadores</a></li>
+            <li><a href="../guns">Armas</a></li>
+            <li><a href="../shots">Tiros</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+					<div class="post">
+						<h2 class="title"><a href="#">Armas disponíveis</a></h2>
+                        <hr>
+                        <table class="zui-table">
+                            <thead>
+                                <tr>
+                                    <th>Número</th>
+                                    <th>Munição</th>
+                                    <th>Alcance</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let gun of guns">
+                                    <td>{{gun.number}}</td>
+                                    <td>{{gun.ammunition}}</td>
+                                    <td>{{gun.range}}</td>
+                                    <td>
+                                        <button class="myButton" (click)="updateGun(gun.id)">Atualizar</button>
+                                        <button class="myButton" (click)="deleteGun(gun.id)">Excluir</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+
+                    </div>
+                            
+                <div style="clear: both;">&nbsp;</div>
+            </div>
+        
+        
+				<!-- end #content -->
+				<div id="sidebar">
+					<ul>
+						<li>
+							<h2>Criar arma</h2>
+                            
+                            <form>
+                                <p>Número: <input type="text" name="number" [(ngModel)]="gun.number"></p>
+                                <p>Munição: <input type="text" name="ammunition" [(ngModel)]="gun.ammunition"></p>
+                                <p>Alcance: <input type="text" name="range" [(ngModel)]="gun.range"></p>
+                                <button class="myButton" (click)="registerGun()">Criar</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+      
+							
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page --> 
+</div>
+<div id="footer">
+</div>
+<!-- end #footer -->
+</body>
+</html>
+
+
